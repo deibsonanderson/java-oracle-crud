@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: java-oracle-crud
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/xe
+    username: save_order
+    password: save_order
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081 
