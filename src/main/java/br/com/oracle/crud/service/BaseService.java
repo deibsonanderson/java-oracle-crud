@@ -5,8 +5,11 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.util.CollectionUtils;
+
+import br.com.oracle.crud.dto.ResponseFilterDTO;
 
 public abstract class BaseService<E, D> {
 
@@ -41,7 +44,7 @@ public abstract class BaseService<E, D> {
 		return mountListEntity(jpa.findAll());
 	}
 	
-	public List<D> mountListEntity(List<E> entitys){
+	protected List<D> mountListEntity(List<E> entitys){
 		List<D> dtos = new ArrayList<>();
 		if (!CollectionUtils.isEmpty(entitys)) {
 			for (E entity : entitys) {
@@ -51,8 +54,21 @@ public abstract class BaseService<E, D> {
 		return dtos;
 	}
 
-	public abstract Class<D> getClassDtoClass();
+	protected abstract Class<D> getClassDtoClass();
 
-	public abstract Class<E> getClassEntityClass();
-
+	protected abstract Class<E> getClassEntityClass();
+	
+	protected ResponseFilterDTO<E> mountResponsefilter(Page<E> page){
+		ResponseFilterDTO<E> filter = new ResponseFilterDTO<>();
+		filter.setNumber(page.getNumber());
+		filter.setNumberOfElements(page.getNumberOfElements());
+		filter.setSize(page.getSize());
+		filter.setTotalPages(page.getTotalPages());
+		filter.setTotalElements(page.getTotalElements());
+		filter.setFirst(page.isFirst());
+		filter.setLast(page.isLast());
+		filter.setContent(page.getContent());
+		return filter;
+	}
+	
 }

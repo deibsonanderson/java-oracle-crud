@@ -1,6 +1,6 @@
 package br.com.oracle.crud.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import lombok.Data;
 
@@ -15,9 +15,9 @@ public class RequestFilterDTO {
 
 	private Integer skip;
 
-	private LocalDate startDate;
+	private Date startDate;
 
-	private LocalDate endDate;
+	private Date endDate;
 
 	private Integer top;
 
