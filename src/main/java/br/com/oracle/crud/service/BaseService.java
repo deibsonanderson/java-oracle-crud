@@ -10,8 +10,12 @@ import org.springframework.util.CollectionUtils;
 
 public abstract class BaseService<E, D> {
 
+	protected static final String ORDER_ASC = "ASC";
+
+	protected static final String ORDER_BY_ID = "id";
+	
 	@Autowired
-	private ModelMapper modelMapper;
+	protected ModelMapper modelMapper;
 
 	@Autowired
 	protected JpaRepository<E, Integer> jpa;
@@ -34,8 +38,11 @@ public abstract class BaseService<E, D> {
 
 	
 	public List<D> findAll() {
+		return mountListEntity(jpa.findAll());
+	}
+	
+	public List<D> mountListEntity(List<E> entitys){
 		List<D> dtos = new ArrayList<>();
-		List<E> entitys = jpa.findAll();
 		if (!CollectionUtils.isEmpty(entitys)) {
 			for (E entity : entitys) {
 				dtos.add(modelMapper.map(entity, getClassDtoClass()));

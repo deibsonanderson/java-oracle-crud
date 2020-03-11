@@ -1,5 +1,7 @@
 package br.com.oracle.crud.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +11,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Table(name = "JUIZ")
 @Data
-public class JuizEntity {
+@EqualsAndHashCode(callSuper=false)
+public class JuizEntity extends BaseEntity implements Serializable {
+
+	private static final long serialVersionUID = 5341505239369929036L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "JUIZ_SEQ")

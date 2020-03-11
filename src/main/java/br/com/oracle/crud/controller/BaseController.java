@@ -18,7 +18,7 @@ import br.com.oracle.crud.service.BaseService;
 public abstract class BaseController<E, D> {
 
 	@Autowired
-	private BaseService<E, D> service;
+	protected BaseService<E, D> service;
 
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	protected ResponseEntity<List<D>> findAll() {

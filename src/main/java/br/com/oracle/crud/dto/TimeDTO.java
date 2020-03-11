@@ -32,6 +32,6 @@ public class TimeDTO {
 	@Valid
 	@NotNull
 	@NotEmpty
-	private List<JogadorDTO> jogadoes;
+	private List<JogadorDTO> jogadores;
 	
 }

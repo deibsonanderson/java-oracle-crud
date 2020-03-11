@@ -1,7 +1,8 @@
 package br.com.oracle.crud.entity;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -18,12 +19,16 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Table(name = "RODADA")
 @Data
-public class RodadaEntity {
+@EqualsAndHashCode(callSuper=false)
+public class RodadaEntity extends BaseEntity implements Serializable {
 	
+	private static final long serialVersionUID = -4545796212387846449L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RODADA_SEQ")
 	@SequenceGenerator(name = "RODADA_SEQ", sequenceName = "RODADA_SEQ", allocationSize = 1)
@@ -32,7 +37,7 @@ public class RodadaEntity {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "RODADA_ID", insertable = true, updatable = true)
-	List<JogoEntity> jogos;
+	Set<JogoEntity> jogos;
 	
 	@Column(name = "PERIODO")
 	@Temporal(TemporalType.DATE)

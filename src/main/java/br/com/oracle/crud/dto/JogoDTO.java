@@ -13,11 +13,11 @@ public class JogoDTO {
 	
 	@Valid
 	@NotNull
-	private TimeDTO time1;
+	private TimeDTO timeCasa;
 	
 	@Valid
 	@NotNull
-	private TimeDTO time2;
+	private TimeDTO timeVisitante;
 	
 	@Valid
 	@NotNull
@@ -26,12 +26,12 @@ public class JogoDTO {
 	@Valid
 	@NotNull
 	@PositiveOrZero
-	private Integer placar1;
+	private Integer placarCasa;
 	
 	@Valid
 	@NotNull
 	@PositiveOrZero
-	private Integer placar2;
+	private Integer placarVisitante;
 	
 	@Valid
 	@NotNull

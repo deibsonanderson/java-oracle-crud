@@ -1,0 +1,84 @@
+{
+  "jogos": [
+    {
+      "campo": {
+        "nome": "Ilha do Retiro"
+      },
+      "juiz": {
+        "genero": "M",
+        "nome": "Mauro"
+      },
+      "placarCasa": 0,
+      "placarVisitante": 0,
+      "timeCasa": {
+        "jogadores": [
+          {
+            "nome": "Carlos",
+            "numero": 1,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          },
+          {
+            "nome": "Anderson",
+            "numero": 11,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          },
+          {
+            "nome": "Januario",
+            "numero": 3,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          }
+        ],
+        "nome": "Sport",
+        "pontos": 0,
+        "tecnico": {
+          "genero": "M",
+          "nome": "Osmar"
+        }
+      },
+      "timeVisitante": {
+        "jogadores": [
+          {
+            "nome": "Jonas",
+            "numero": 4,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          },
+          {
+            "nome": "Bernado",
+            "numero": 4,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          },
+          {
+            "nome": "Thiago",
+            "numero": 4,
+            "quantidadeCartaoAmarelo": 0,
+            "quantidadeCartaoVermelho": 0,
+            "salario": 0,
+            "titular": true
+          }
+        ],
+        "nome": "Nautico",
+        "pontos": 0,
+        "tecnico": {
+          "genero": "M",
+          "nome": "Deibson"
+        }
+      }
+    }
+  ],
+  "periodo": "2020-03-11T16:37:59.995Z"
+}
